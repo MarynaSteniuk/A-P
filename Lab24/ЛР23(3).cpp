@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
-float A(float* a, float* b, float* c, float* d) {
-  if (*a == *b || *a==*c || *a == *d || *b==*c || *b == *d || *c == *d) {
+float A(float* a, float* b, float* c, float* d) 
+{
+  if (*a == *b || *a==*c || *a == *d || *b==*c || *b == *d || *c == *d) 
+  {
     cout << "the data is not unique" << endl;
   }
 

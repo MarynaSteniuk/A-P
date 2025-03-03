@@ -1,12 +1,12 @@
 #include <iostream>
-
-float third(float* a, float* b, float* c, float* d) {
+using namespace std;
+float A(float* a, float* b, float* c, float* d) {
   if (*a == *b || *a==*c || *a == *d || *b==*c || *b == *d || *c == *d) {
-    std::cout << "the data is not unique" << std::endl;
+    cout << "the data is not unique" << endl;
   }
 
   float average = (*a + *b + *c + *d) / 4;
-  std::cout << "average: " << average << std::endl;
+  cout << "average: " << average << endl;
 
   float* minimum = a;
   float* maximum = a;
@@ -19,30 +19,29 @@ float third(float* a, float* b, float* c, float* d) {
   if (*c > *maximum) maximum = c;
   if (*d > *maximum) maximum = d;
 
-  std::cout << "not minimum and not maximum: ";
+  cout << "not minimum and not maximum: ";
   if (a != minimum && a != maximum) 
-    std::cout << *a << " ";
+    cout << *a << " ";
   if (b != minimum && b != maximum) 
-    std::cout << *b << " ";
+    cout << *b << " ";
   if (c != minimum && c != maximum) 
-    std::cout << *c << " ";
+    cout << *c << " ";
   if (d != minimum && d != maximum) 
-    std::cout << *d << " ";
+    cout << *d << " ";
 
   return 0;
 }
 
 int main() {
   float a, b, c, d;
-  std::cout << " enter a: ";
-  std::cin >> a;
-  std::cout << " enter b: ";
-  std::cin >> b;
-  std::cout << " enter c: ";
-  std::cin >> c;
-  std::cout << " enter d: ";
-  std::cin >> d;
-  third(&a,&b,&c,&d);
-
+  cout << " enter a: ";
+  cin >> a;
+  cout << " enter b: ";
+  cin >> b;
+  cout << " enter c: ";
+  cin >> c;
+  cout << " enter d: ";
+  cin >> d;
+  A(&a,&b,&c,&d);
   return 0;
 }

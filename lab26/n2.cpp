@@ -8,7 +8,7 @@ int main() {
     cout<<"n: ";
     cin>>n; 
     srand(time(0));
-    cout<<"Matri: "<<endl;
+    cout<<"Matrix: "<<endl;
     for(i=0; i<n; i++) 
 	{
         for (j=0; j<n; j++) 

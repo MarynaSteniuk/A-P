@@ -1,0 +1,3 @@
+Radoc 1: 3
+Radoc 2: 3
+Radoc 3: 0

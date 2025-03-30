@@ -1,44 +1,77 @@
 #include <iostream>
+#include <ctime>
+#include <stdlib.h>
+#include <cmath>
 #include <fstream>
-using namespace std;
-int main() 
-{
-    int n;
-    cout << "Vvedit rozmir matruci n: ";
-    cin >> n;
-    int** A = new int*[n]; // Виділення пам'яті для матриці
-    for (int i = 0; i < n; ++i)
-        A[i] = new int[n];
-    cout << "Vvedit elementu matruci:\n";  // Введення елементів матриці
-    for (int i = 0; i < n; ++i)
-        for (int j = 0; j < n; ++j)
-            cin >> A[i][j];
-    double sum = 0; // Обчислення середнього арифметичного
-    for (int i = 0; i < n; ++i)
-        for (int j = 0; j < n; ++j)
-            sum += A[i][j];
-    double avg = sum / (n * n);
-    int* result = new int[n];    // Виділення пам'яті для масиву результатів
-    for (int i = 0; i < n; ++i)   // Обчислення кількості елементів менших за середнє
-	{
-        result[i] = 0;
-        for (int j = 0; j < n; ++j) 
-		{
-            if (A[i][j] < avg)
-                ++result[i];
-        }
-    }
-    ofstream outFile("result.txt"); // Запис результатів у файл
-    for (int i = 0; i < n; ++i) 
-	{
-        outFile << "Radoc " << i + 1 << ": " << result[i]<<endl;
-    }
-    outFile.close();
-    for (int i = 0; i < n; ++i)  // Вивільнення пам'яті
-        delete[] A[i];
-    delete[] A;
-    delete[] result;
-    cout << "Rezultat zapucano y fail result.txt\n";
-    return 0;
-}
 
+using namespace std;
+
+int main()
+{
+	srand(time(NULL));
+	int n, i, j;
+	
+	cout<<"Input nxn: "; cin>>n;
+	
+	int **a=new int*[n];
+	for (i=0; i<n; i++)
+		a[i]=new int[n];
+		
+	cout<<"Matrix: "<<endl;	
+	for (i=0; i<n; i++){
+		for (j=0; j<n; j++){
+			a[i][j]=rand()% 100;
+			cout<<a[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	
+	int countall, suma=0;
+	for (i=0; i<n; i++){
+		for (j=0; j<n; j++){
+			countall++;
+			suma+=a[i][j]; //looking for the number and sum of all elements
+		}
+	}
+	cout<<"Count all numbers: "<<countall;
+	cout<<endl<<"Suma all numbers: "<<suma<<endl; //output for verification
+	
+	double avg=(suma*1.0)/(double)countall; // find the average value
+	cout<<"Average: "<<avg<<endl;
+	
+	int *countRow= new int[n]; // introduce a dynamic array
+	
+	for (i=0; i<n; i++){
+		countRow[i]=0;
+		for (j=0; j<n; j++){
+			if(a[i][j]<avg){
+				countRow[i]++;
+			}
+		}
+	}
+	
+	
+	cout<<endl;
+	cout<<"Result: "<<endl;
+	for(i=0;i<n;i++){
+		cout<<"Row "<<i+1<<": "<<countRow[i]<<endl; //result output
+	}
+	
+	ofstream file("Zavd1.txt"); // write to file
+	if(file.is_open()){
+		for(i=0;i<n;i++){
+		file<<"Row "<<i+1<<": "<<countRow[i]<<endl;
+		}
+	
+	file.close();
+	}
+	
+	
+	for (i=0; i<n; i++)
+		delete []a[i];
+
+	delete []a;
+	delete []countRow;
+	
+	return 0;
+}

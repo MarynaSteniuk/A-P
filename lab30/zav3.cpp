@@ -14,7 +14,7 @@ int *fillArray(int a[], int n, int min=1, int max=50) //функція заповнення масив
 		do
 		{
 			uniqueness = true;
-			a[i] = rand() % ((max - min) + 1)+ min; //Генеруємо масив за заданими значеннями 
+			a[i] = rand() % ((max - min) + 1)+ min; //Генеруємо масив за заданими значеннями в діапазоні від min до max
 			for(j=0;j<i;j++)
 			{
 				if(a[i] == a[j])
@@ -41,7 +41,7 @@ int *fillTwoArray(int a[], int m=8) //функція заповнення масива
 		do
 		{
 			uniqueness = true;
-			b[i] = a[rand() % 12]; //Генеруємо новий масив використовуючи основний масив
+			b[i] = a[rand() % 12]; //Генеруємо новий масив використовуючи основний масив значення береться випадковим чином із 12-елементного масиву a[]
 			for(j=0;j<i;j++)
 			{
 				if(b[i] == b[j])
@@ -64,17 +64,17 @@ int main()
 	
 	int *array = new int[n];
 
-	int *p1 = fillArray(array, n);
+	int *p1 = fillArray(array, n); //генеруємо масив з 12 унікальних випадкових чисел в діапазоні 1–50
 	cout<<"Array in the range 1 to 50: ";
 	for(i=0;i<n;i++){
-		cout<<*p1<<" ";
+		cout<<*p1<<" "; //Виводимо цей масив, використовуючи покажчик p1
 		p1++;
 	}
 	
-	int *p2 = fillTwoArray(array);
+	int *p2 = fillTwoArray(array); //Створюємо новий масив з 8 унікальних елементів, взятих випадково з array
 	cout<<endl<<"Randomly generated array of 8 values from the previous array: ";
 	for(i=0;i<8;i++){
-		cout<<*p2<<" ";
+		cout<<*p2<<" "; //Виводимо цей масив за допомогою покажчика p2
 		p2++;
 	}
 

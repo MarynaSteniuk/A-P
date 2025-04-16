@@ -24,16 +24,16 @@ int main()
         cout << endl;
     }
     int positive=0, negative=0, zero=0; 
-    double pSum=0, nSum=0; 
+    double pSum=0, nSum=0; //суми додатних і від’ємних чисел
     for (i=0; i<n; i++) 
 	{
         for (j=0; j<n; j++) 
 		{
-            int v=*(*(A+i)+j); 
+            int v=*(*(A+i)+j); //отримуємо значення елемента матриці
             if (v>0) 
 			{
-                pSum=pSum+v;
-                positive++;
+                pSum=pSum+v; //додавання додатного числа до суми
+                positive++;  //збільшення кількості додатних чисел
             } 
 			else if (v<0) 
 			{
@@ -47,14 +47,14 @@ int main()
         }
     }
     
-double positiveAvg, negativeAvg;
+double positiveAvg, negativeAvg; //розрахунок середнього значення додатних і від’ємних чисел
 if (positive>0) 
 	{
     positiveAvg=pSum/positive;
     } 
 	else 
 	{
-    positiveAvg=0;
+    positiveAvg=0; //якщо немає додатних чисел то середнє=0
     }
     
 if (negative>0) 

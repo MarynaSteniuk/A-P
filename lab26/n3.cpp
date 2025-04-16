@@ -8,10 +8,10 @@ int main()
     int n, i, j;
     cout<<"Matrix (n): "; 
     cin>>n;
-    int**A=new int*[n]; 
+    int**A=new int*[n]; //динамічне виділення пам’яті для двовимірного масиву
     for (i=0; i<n; i++) 
 	{
-        A[i]=new int[n]; 
+        A[i]=new int[n]; //виділення пам’яті для кожного рядка
     }
     srand(time(0));
     cout<<"Matrix A:"<<endl;
@@ -24,23 +24,23 @@ int main()
         }
         cout<<endl;
     }
-    int* minI=new int[n]; 
-    for (i=0; i<n; i++) 
+    int* minI=new int[n]; //для збереження індексів мінімальних елементів
+    for (i=0; i<n; i++) //знаходимо індекси min елементів у кожному рядку
 	{
-        int minIndex=0; 
+        int minIndex=0; //min індекс для рядка 
         for (j=1; j<n; j++) 
 		{
-            if (*(*(A+i)+j)<*(*(A+i)+minIndex)) 
+            if (*(*(A+i)+j)<*(*(A+i)+minIndex)) //якщо поточний елемент менший за елемент на поточному мінімальному індексі
 			{ 
-                minIndex=j;
+                minIndex=j; //то оновлюємо min індекс
             }
         }
-        *(minI+i)=minIndex;
+        *(minI+i)=minIndex; //зберігаємо індекс мінімального елемента для рядка `i`
     }
     cout<<"Indices of minimum elements in each row:"<<endl;
     for (i=0; i<n; i++) 
 	{
-        cout<<*(minI+i)<<" "; 
+        cout<<*(minI+i)<<" "; //виведення індексу мінімального елемента рядка
     }
     cout<<endl;
     delete[] minI;

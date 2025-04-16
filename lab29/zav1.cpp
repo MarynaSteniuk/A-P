@@ -19,7 +19,7 @@ int main()
 		n = i; //зберігаємо фактичну кількість зчитаних слів
 		file.close(); 
 	}
-	cout << "Words in file: "; //виводимо про
+	cout << "Words in file: "; //виводимо 
 	for(i = 0; i < n; i++)
 	{
 		cout << c[i] << " ";

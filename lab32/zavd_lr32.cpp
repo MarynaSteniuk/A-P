@@ -73,6 +73,10 @@ int main() {
     const int N = 3; 
     Employee employees[N]; //масив об'єктів класу Employee
     int currentYear=2025; //поточний рік
+    Employee emp("Petrenko", "IT", 2010, 15000); // створення об'єкта з параметрами
+    cout << "\nDani pro pracivnuka, stworeno za dopomogoyu konstruktoru z parametramy:\n";
+    emp.output(); // вивід даних створеного об'єкта
+
     for (int i=0; i<N; i++) //введення даних для співробітників 
 	{
         cout<<"Pracivnuk #"<<i+1<< endl;

@@ -3,8 +3,8 @@
 using namespace std;
 //конструктор за замовчуванням
 Employee::Employee() {
-    lastName = "Невідомо";
-    department = "Невідомо";
+    lastName = "Nevidomo";
+    department = "Nevidomo";
     yearOfEmployment = 2000;
     salary = 0.0;
     bonus = 0.0;
@@ -30,11 +30,7 @@ void Employee::input() {
 }
 //метод для виведення даних
 void Employee::output() const {
-    cout << "Prizvuche: " << lastName
-         << " Viddil: " << department
-         << " Pik pracevlashtyvana: " << yearOfEmployment
-         << " Zarplata: " << salary
-         << " Premia: " << bonus << endl;
+    cout << "Prizvuche: " << lastName<< " Viddil: " << department<< " Pik pracevlashtyvana: " << yearOfEmployment<< " Zarplata: " << salary<< " Premia: " << bonus << endl;
 }
 //метод для розрахунку премії
 void Employee::calculateBonus(int currentYear) {

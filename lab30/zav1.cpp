@@ -37,7 +37,7 @@ int *fillArray(int a[], int n) //функція вибору заповнення масива
 void printArray(int a[], int n) // функція вивдення масиву (теж за вибором)
 {
 	int i, choose;
-	cout<<"Choose 1 if you want to output in a column, or 2 if in a row: ";
+	cout<<"Choose 2 if you want to output in a column, or 1 if in a row: ";
 	cin>>choose;
 	
 	switch(choose){

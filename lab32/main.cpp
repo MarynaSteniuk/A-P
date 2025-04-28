@@ -1,13 +1,17 @@
 #include <iostream>
 #include "Employee.h"
+#include "Employee.cpp"
 using namespace std;
 
-int main() {
+int main() 
+{
     const int N = 3;
     Employee employees[N]; // масив об'єктів класу Employee
     int currentYear = 2025; // поточний рік
     //створення об'єкта з параметрами
-    Employee emp("Petrenko", "IT", 2010, 15000);
+    Employee *defauoltEmp = new Employee();
+    defauoltEmp->output();
+	Employee emp("Petrenko", "IT", 2020, 15000);
     cout << "\nDani pro pracivnuka, stworeno za dopomogoyu konstruktoru z parametramy:\n";
     emp.output();
     //введення даних для масиву співробітників

@@ -63,6 +63,5 @@ int main() {
     cout << "Chas 1 > Chas 2: " << (t1 > t2 ? "Yes" : "No") << endl;
     cout << "Chas 1 < Chas 2: " << (t1 < t2 ? "Yes" : "No") << endl;
     cout << "Chas 1 == Chas 2: " << (t1 == t2 ? "Yes" : "No") << endl;
-
     return 0;
 }
